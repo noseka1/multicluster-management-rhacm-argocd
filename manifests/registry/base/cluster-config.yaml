@@ -1,0 +1,12 @@
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+spec:
+  # Create a route to allow accessing the image registry from outside of OpenShift.
+  defaultRoute: true
+  # Operator will update the registry as configuration resources are updated
+  managementState: Managed
+  # Place the image registry pods on infra nodes.
+  nodeSelector:
+    node-role.kubernetes.io/worker: ""

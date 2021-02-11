@@ -3,4 +3,3 @@ kind: Kustomization
 
 resources:
 - cluster-config.yaml
-- registry-pvc.yaml
