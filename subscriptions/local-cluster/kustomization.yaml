@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: local-cluster-subs
 
 resources:
+- local-cluster-aggregates-merge-appsub.yaml
+- local-cluster-aggregates-replace-appsub.yaml
 - local-cluster-app.yaml
-- local-cluster-merge-appsub.yaml
 - local-cluster-placementrule.yaml
-- local-cluster-replace-appsub.yaml
 - local-cluster-subs-ns.yaml
