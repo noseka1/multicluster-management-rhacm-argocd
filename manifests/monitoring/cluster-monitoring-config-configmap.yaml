@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |+
+    # Enable monitoring your own services
+    techPreviewUserWorkload:
+      enabled: true
+    alertmanagerMain:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+      volumeClaimTemplate:
+        metadata:
+          name: alertmanager
+        spec:
+          resources:
+            requests:
+              storage: 40Gi
+    prometheusK8s:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+      volumeClaimTemplate:
+        metadata:
+          name: prometheus
+        spec:
+          resources:
+            requests:
+              storage: 40Gi
+    prometheusOperator:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+    grafana:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+    k8sPrometheusAdapter:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+    kubeStateMetrics:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+    telemeterClient:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
