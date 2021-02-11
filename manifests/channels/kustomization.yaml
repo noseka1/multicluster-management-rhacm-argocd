@@ -1,6 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+namespace: mgmt-channels
+
 resources:
 - git-rhacm-kustomization-channel.yaml
 - mgmt-channels-ns.yaml
