@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/github-path: aggregates/local-cluster/merge
-  name: local-cluster-aggregates-merge
+  name: git-openshift-gitops-rhacm-aggregates-merge
 spec:
   channel: mgmt-channel-git-openshift-gitops-rhacm/git-openshift-gitops-rhacm
   placement:

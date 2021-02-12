@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: local-cluster-subs
+
+resources:
+- git-openshift-gitops-rhacm-aggregates-merge-appsub.yaml
+- git-openshift-gitops-rhacm-aggregates-replace-appsub.yaml
+- local-cluster-app.yaml
+- local-cluster-placementrule.yaml
+- local-cluster-subs-ns.yaml

@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/github-path: aggregates/local-cluster/replace
-  name: local-cluster-aggregates-replace
+  name: git-openshift-gitops-rhacm-aggregates-replace
 spec:
   channel: mgmt-channel-git-openshift-gitops-rhacm/openshift-gitops-rhacm
   placement:

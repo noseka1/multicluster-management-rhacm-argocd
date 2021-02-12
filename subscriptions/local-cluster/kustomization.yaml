@@ -1,11 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: local-cluster-subs
-
-resources:
-- local-cluster-aggregates-merge-appsub.yaml
-- local-cluster-aggregates-replace-appsub.yaml
-- local-cluster-app.yaml
-- local-cluster-placementrule.yaml
-- local-cluster-subs-ns.yaml
+bases:
+- local-cluster-subs

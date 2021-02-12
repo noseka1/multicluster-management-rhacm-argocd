@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/github-path: subscriptions/local-cluster
-  name: mgmt-bootstrap-replace
+  name: git-openshift-gitops-rhacm-subscriptions-local-cluster
 spec:
   channel: git-openshift-gitops-rhacm
   placement:
