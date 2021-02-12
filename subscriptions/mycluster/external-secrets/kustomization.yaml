@@ -7,3 +7,4 @@ resources:
 - helm-kubernetes-external-secrets-appsub.yaml
 - mycluster-app.yaml
 - mycluster-placementrule.yaml
+- ns-external-secrets-deployable-appsub.yaml
