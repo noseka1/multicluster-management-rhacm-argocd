@@ -5,7 +5,7 @@ metadata:
     apps.open-cluster-management.io/github-path: aggregates/local-cluster/merge
   name: git-openshift-gitops-rhacm-aggregates-merge
 spec:
-  channel: mgmt-channel-git-openshift-gitops-rhacm/git-openshift-gitops-rhacm
+  channel: mgmt-bootstrap/git-openshift-gitops-rhacm
   placement:
     placementRef:
       name: local-cluster
