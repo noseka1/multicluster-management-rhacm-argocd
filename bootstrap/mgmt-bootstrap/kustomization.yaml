@@ -5,7 +5,7 @@ namespace: mgmt-bootstrap
 
 resources:
 - git-openshift-gitops-rhacm-channel.yaml
-- git-openshift-gitops-rhacm-subscriptions-local-cluster-appsub.yaml
+- git-openshift-gitops-rhacm-subs-local-cluster-appsub.yaml
 - mgmt-bootstrap-app.yaml
 - mgmt-bootstrap-ns.yaml
 - mgmt-bootstrap-placementrule.yaml
