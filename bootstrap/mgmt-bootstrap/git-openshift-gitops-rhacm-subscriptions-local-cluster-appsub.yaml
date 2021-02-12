@@ -5,7 +5,7 @@ metadata:
     apps.open-cluster-management.io/github-path: subscriptions/local-cluster
   name: git-openshift-gitops-rhacm-subscriptions-local-cluster
 spec:
-  channel: git-openshift-gitops-rhacm
+  channel: mgmt-bootstrap/git-openshift-gitops-rhacm
   placement:
     placementRef:
       name: mgmt-bootstrap
