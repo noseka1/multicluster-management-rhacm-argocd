@@ -2,6 +2,7 @@
 
 * Subscription merge option. Used for existing Kubernetes resources that are not owned by this Subscription. The resources are not deleted when the subscription is removed.
 * Subscription replace option. Subscription owns the resources. When the subscription is removed, the resources will be removed too.
+* Non-Git channels cannot be created in the same namespace
 
 ## References
 
