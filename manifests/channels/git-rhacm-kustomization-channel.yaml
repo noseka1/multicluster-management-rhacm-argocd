@@ -2,6 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
   name: git-rhacm-kustomization
+  namespace: mgmt-channel-git-rhacm-kustomization
 spec:
   type: Git
   pathname: https://github.com/noseka1/rhacm-kustomization

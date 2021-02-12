@@ -7,5 +7,6 @@ resources:
 - mycluster-aggregates-merge-appsub.yaml
 - mycluster-aggregates-replace-appsub.yaml
 - mycluster-app.yaml
+- mycluster-external-secrets-deployable-appsub.yaml
 - mycluster-placementrule.yaml
 - mycluster-subs-ns.yaml

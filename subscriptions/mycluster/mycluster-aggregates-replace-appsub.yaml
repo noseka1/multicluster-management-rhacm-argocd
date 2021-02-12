@@ -5,7 +5,7 @@ metadata:
     apps.open-cluster-management.io/github-path: aggregates/mycluster/replace
   name: mycluster-aggregates-replace
 spec:
-  channel: mgmt-channels/git-rhacm-kustomization
+  channel: mgmt-channel-git-rhacm-kustomization/git-rhacm-kustomization
   placement:
     placementRef:
       name: mycluster
