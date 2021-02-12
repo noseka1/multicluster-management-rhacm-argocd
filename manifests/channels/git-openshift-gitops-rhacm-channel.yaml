@@ -1,0 +1,8 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: git-openshift-gitops-rhacm
+  namespace: mgmt-channel-git-openshift-gitops-rhacm
+spec:
+  type: Git
+  pathname: https://github.com/noseka1/openshift-gitops-rhacm
