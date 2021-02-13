@@ -9,4 +9,3 @@ resources:
 - mycluster-app.yaml
 - mycluster-placementrule.yaml
 - mycluster-subs-ns.yaml
-- ns-external-secrets-deployable-appsub.yaml
