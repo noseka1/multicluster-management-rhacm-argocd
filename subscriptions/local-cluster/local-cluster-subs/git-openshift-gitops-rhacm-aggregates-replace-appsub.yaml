@@ -3,6 +3,7 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/github-path: aggregates/local-cluster/replace
+    apps.open-cluster-management.io/reconcile-option: replace
   name: git-openshift-gitops-rhacm-aggregates-replace
 spec:
   channel: mgmt-bootstrap/git-openshift-gitops-rhacm
