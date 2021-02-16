@@ -2,3 +2,10 @@ apiVersion: config.openshift.io/v1
 kind: APIServer
 metadata:
   name: cluster
+spec:
+  audit:
+    # You can control the amount of information that is logged to the API server audit logs by choosing
+    # the audit log policy profile to use. Set audit log policy profile, choose one of:
+    # Default, WriteRequestBodies, AllRequestBodies
+    # See also: https://docs.openshift.com/container-platform/4.6/security/audit-log-policy-config.html
+    profile: Default
