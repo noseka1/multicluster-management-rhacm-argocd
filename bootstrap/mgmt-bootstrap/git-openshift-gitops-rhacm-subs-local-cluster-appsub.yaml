@@ -3,7 +3,9 @@ kind: Subscription
 metadata:
   annotations:
     apps.open-cluster-management.io/github-path: subscriptions/local-cluster
-    apps.open-cluster-management.io/reconcile-option: replace
+    # Would prefer reconcile-option: replace but that causes the open-cluster-management annotations
+    # that are added to this object by RHACM being wiped out on the next git sync.
+    apps.open-cluster-management.io/reconcile-option: merge
   name: git-openshift-gitops-rhacm-subs-local-cluster
 spec:
   channel: mgmt-bootstrap/git-openshift-gitops-rhacm
