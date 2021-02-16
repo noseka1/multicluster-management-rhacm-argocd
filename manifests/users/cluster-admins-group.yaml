@@ -2,3 +2,5 @@ apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
   name: cluster-admins
+users:
+- admin
