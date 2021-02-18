@@ -11,4 +11,4 @@ spec:
   storage:
     pvc:
       claim: registry
-    s3: null
+    s3: {}
