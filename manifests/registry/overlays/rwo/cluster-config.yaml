@@ -9,6 +9,7 @@ spec:
   rolloutStrategy: Recreate
   # Configure persistent storage for the image registry.
   storage:
+    managementState: Managed
     pvc:
       claim: registry
     s3: {}
