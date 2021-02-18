@@ -14,3 +14,4 @@ To create this repo, I draw ideas and inspiration from:
 * https://github.com/kasuboski/k8s-gitops
 * https://github.com/dgoodwin/openshift4-gitops
 * https://github.com/siamaksade/openshift-gitops-getting-started
+* https://github.com/sabre1041/rhacm-argocd
