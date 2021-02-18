@@ -1,6 +1,6 @@
 apiVersion: user.openshift.io/v1
 kind: Group
 metadata:
-  name: cluster-admins
+  name: cluster-viewers
 users:
-- admin
+- developer
