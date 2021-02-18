@@ -1,6 +1,8 @@
 apiVersion: config.openshift.io/v1
 kind: APIServer
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
   name: cluster
 spec:
   audit:

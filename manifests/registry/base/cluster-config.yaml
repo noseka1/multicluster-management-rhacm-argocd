@@ -1,6 +1,8 @@
 apiVersion: imageregistry.operator.openshift.io/v1
 kind: Config
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
   name: cluster
 spec:
   # Create a route to allow accessing the image registry from outside of OpenShift.
