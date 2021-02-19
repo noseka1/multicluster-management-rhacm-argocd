@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- custom-kubernetes-token-deployable.yaml
+- external-secrets-appsub.yaml
+- external-secrets-app.yaml
+- external-secrets-channel-ns.yaml
+- external-secrets-channel.yaml
+- external-secrets-deployable-ns.yaml
+- external-secrets-placementrule.yaml
+- external-secrets-test-deployable.yaml
