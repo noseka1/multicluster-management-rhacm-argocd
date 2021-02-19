@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mycluster-cluster-config
+spec:
+  destination:
+    name: mycluster
+  project: mycluster
+  source:
+    path: aggregates/mycluster/merge
+    repoURL: https://github.com/noseka1/openshift-gitops-rhacm
+    targetRevision: master
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
