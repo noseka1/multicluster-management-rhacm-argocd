@@ -7,7 +7,7 @@ spec:
     name: mycluster
   project: mycluster
   source:
-    path: aggregates/mycluster/merge
+    path: aggregates/mycluster
     repoURL: https://github.com/noseka1/openshift-gitops-rhacm
     targetRevision: master
   syncPolicy:
