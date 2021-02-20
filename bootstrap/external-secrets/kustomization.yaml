@@ -3,10 +3,13 @@ kind: Kustomization
 
 resources:
 - custom-kubernetes-token-deployable.yaml
-- external-secrets-appsub.yaml
 - external-secrets-app.yaml
-- external-secrets-channel-ns.yaml
-- external-secrets-channel.yaml
 - external-secrets-deployable-ns.yaml
+- external-secrets-helm-appsub.yaml
+- external-secrets-helm-channel-ns.yaml
+- external-secrets-helm-channel.yaml
+- external-secrets-ns-appsub.yaml
+- external-secrets-ns-channel-ns.yaml
+- external-secrets-ns-channel.yaml
 - external-secrets-placementrule.yaml
 - external-secrets-test-deployable.yaml

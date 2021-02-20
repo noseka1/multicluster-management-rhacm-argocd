@@ -5,15 +5,15 @@ metadata:
   namespace: external-secrets-deployable
 spec:
   channels:
-  - external-secrets
+  - external-secrets-ns
   template:
     apiVersion: v1
     kind: Secret
     metadata:
       name: custom-kubernetes-token
-    stringData:
+    data:
       # Replace this token with a token that can authenticate against HashiCorp Vault. Assuming that you deployed HashiCorp Vault
       # and External Secrets on the RHACM Hub cluster, you can get this token by running this command against the RHACM Hub cluster:
-      # oc sa get-token -n external-secrets external-secrets-kubernetes-external-secrets
+      # oc sa get-token -n external-secrets external-secrets-kubernetes-external-secrets | base64 -w 0
       token: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNklsb3pZbnBVYlVSWk9YcExNREJHZUZKTmRHaFhURTlzUkRKeU5HdDRSMDlpU2tWU09IRk9TekoyVUc4aWZRLmV5SnBjM01pT2lKcmRXSmxjbTVsZEdWekwzTmxjblpwWTJWaFkyTnZkVzUwSWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXVZVzFsYzNCaFkyVWlPaUpsZUhSbGNtNWhiQzF6WldOeVpYUnpJaXdpYTNWaVpYSnVaWFJsY3k1cGJ5OXpaWEoyYVdObFlXTmpiM1Z1ZEM5elpXTnlaWFF1Ym1GdFpTSTZJbVY0ZEdWeWJtRnNMWE5sWTNKbGRITXRhM1ZpWlhKdVpYUmxjeTFsZUhSbGNtNWhiQzF6WldOeVpYUnpMWFJ2YTJWdUxYUjRjR2h4SWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXpaWEoyYVdObExXRmpZMjkxYm5RdWJtRnRaU0k2SW1WNGRHVnlibUZzTFhObFkzSmxkSE10YTNWaVpYSnVaWFJsY3kxbGVIUmxjbTVoYkMxelpXTnlaWFJ6SWl3aWEzVmlaWEp1WlhSbGN5NXBieTl6WlhKMmFXTmxZV05qYjNWdWRDOXpaWEoyYVdObExXRmpZMjkxYm5RdWRXbGtJam9pTmpnNU5tRTVNRFl0TmpFMVl5MDBNekUxTFdJeVlXRXRNak13TkRrek9EbGlZalpsSWl3aWMzVmlJam9pYzNsemRHVnRPbk5sY25acFkyVmhZMk52ZFc1ME9tVjRkR1Z5Ym1Gc0xYTmxZM0psZEhNNlpYaDBaWEp1WVd3dGMyVmpjbVYwY3kxcmRXSmxjbTVsZEdWekxXVjRkR1Z5Ym1Gc0xYTmxZM0psZEhNaWZRLmEyTFlSTl9FM0k1UTJGUmtpaFBLUXlKRHVDQjhHbG5HREhoeWZGUzJuenpjWTlMLTBEV0FNMGdkdDlrWXkyUjNkNWVBdnViTUVlX3QzX0loVDFfcGdIWmcxdUpPUTk2TnpNRzI1aG9LY0daUGNqdTFrYzIweDFfVk9YaXlITHVvVkJ4ZkFJc0Nnei1Ddnp0b0JiQXp0Nk9aUW9UX0p1Tm5IOUVWYkF5WTVYcWRMeVhDNWhJOTA2aGFZeEZiOVN6ZzZRTlg4bEttWVNVT3ptcU4wRUNQNTlxWEJ0Ny1DWDRmQVJHREJfWkxIeVZzUVJlN2EwY0hxaWN4ZXhGOFNGR2VBZnRqbnlrSTM0TF9kb29zVHY2SUE2RVFjRGtMWW80U2tLSUstLUdYRjdiN1UtaEN4d0l5WTItRGNPNFpVREtSeWlSbGpBdzJsSUZOWXlDQS1adnNKdw==
     type: Opaque
