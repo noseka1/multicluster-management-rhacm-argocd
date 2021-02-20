@@ -6,4 +6,3 @@ namespace: openshift-gitops
 resources:
 - mycluster-appproj.yaml
 - mycluster-cluster-config-app.yaml
-- mycluster-external-secrets-app.yaml
