@@ -3,6 +3,7 @@ kind: APIServer
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
   name: cluster
 spec:
   audit:
