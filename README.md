@@ -1,5 +1,12 @@
 # Example of managing OCP clusters using RHACM and Argo CD
 
+Components used:
+* [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (RHACM)
+* [Argo CD](https://argoproj.github.io/argo-cd/)
+* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) (formerly known as GoDaddy External Secrets)
+
+Notes:
+
 * Subscription merge option. Used for existing Kubernetes resources that are not owned by this Subscription. The resources are not deleted when the subscription is removed.
 * Subscription replace option. Subscription owns the resources. When the subscription is removed, the resources will be removed too.
 * Non-Git channels cannot be created in the same namespace
