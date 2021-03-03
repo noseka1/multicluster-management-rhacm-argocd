@@ -1,0 +1,21 @@
+diff --git i/lib/backends/vault-backend.js w/lib/backends/vault-backend.js
+index 73cff2c..0618de7 100644
+--- i/lib/backends/vault-backend.js
++++ w/lib/backends/vault-backend.js
+@@ -26,7 +26,15 @@ class VaultBackend extends KVBackend {
+   _fetchServiceAccountToken () {
+     if (!this._serviceAccountToken) {
+       const fs = require('fs')
+-      this._serviceAccountToken = fs.readFileSync('/var/run/secrets/kubernetes.io/serviceaccount/token', 'utf8')
++      // External Secrets assume that HashiCorp Vault instance is running on the same Kubernetes cluster as the External
++      // Secrets operator. To allow External Secrets to fetch secret data from Vault running on a remote Kubernetes
++      // cluster, the External Secrets need to use an authentication token that allows it to authenticate against the
++      // remote Kubernetes cluster. The location from where the External Secrets operator reads the authentication token
++      // was hard-coded in the operator. Modifying the existing code to allow External Secrets to grab a token from an
++      // arbitrary location specified by the CUSTOM_KUBERNETES_TOKEN_PATH environment variable. The idea is that a
++      // secret that contains the remote authentication token will be mounted at this location.
++      const tokenPath = process.env.CUSTOM_KUBERNETES_TOKEN_PATH || '/var/run/secrets/kubernetes.io/serviceaccount/token'
++      this._serviceAccountToken = fs.readFileSync(tokenPath, 'utf8')
+     }
+     return this._serviceAccountToken
+   }
