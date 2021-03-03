@@ -1,4 +1,4 @@
-FROM ghcr.io/external-secrets/kubernetes-external-secrets:6.3.0
+FROM ghcr.io/external-secrets/kubernetes-external-secrets:6.4.0
 
 COPY custom_kubernetes_token_path.diff /tmp
 USER root

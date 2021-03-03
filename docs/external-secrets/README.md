@@ -6,14 +6,14 @@ Build the custom External Secrets container image:
 
 ```
 $ podman build \
-  --tag kubernetes-external-secrets:6.3.0-patch1 \
+  --tag kubernetes-external-secrets:6.4.0-patch1 \
   .
 ```
 
 Push the image to the image registry. For example:
 
 ```
-$ podman push kubernetes-external-secrets:6.3.0-patch1 quay.io/noseka1/kubernetes-external-secrets:6.3.0-patch1
+$ podman push kubernetes-external-secrets:6.4.0-patch1 quay.io/noseka1/kubernetes-external-secrets:6.4.0-patch1
 ```
 
 When deploying the External Secrets operator using a [Helm Chart](https://github.com/external-secrets/kubernetes-external-secrets/tree/master/charts/kubernetes-external-secrets), you can leverage the custom image by setting the Chart's `values.yaml` to something like this:
@@ -21,7 +21,7 @@ When deploying the External Secrets operator using a [Helm Chart](https://github
 ```
 image:
   repository: quay.io/noseka1/kubernetes-external-secrets
-  tag: 6.3.0-patch1
+  tag: 6.4.0-patch1
   pullPolicy: Always
 env:
   LOG_LEVEL: debug
