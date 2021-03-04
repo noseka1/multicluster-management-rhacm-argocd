@@ -24,3 +24,4 @@ To create this repo, I draw ideas and inspiration from:
 * https://github.com/siamaksade/openshift-gitops-getting-started
 * https://github.com/sabre1041/rhacm-argocd
 * https://github.com/christianh814/gitops-examples
+* https://github.com/redhat-edge-computing/blueprint-management-hub
