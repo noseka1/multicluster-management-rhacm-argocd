@@ -18,6 +18,21 @@ Push the image to the image registry. For example:
 $ podman push kubernetes-external-secrets:6.4.0-patch1 quay.io/noseka1/kubernetes-external-secrets:6.4.0-patch1
 ```
 
+Deploy a secret that contains a token that allows authenticating against a remote Kubernetes cluster:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: custom-kubernetes-token
+data:
+  # Replace this token with a token that can authenticate against the remote Kubernetes cluster. You can get this token by running
+  # this command against the remote Kubernetes cluster, for example:
+  # oc sa get-token -n <your_namespace> <your_serviceaccount> | base64 -w 0
+  token: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNk ...
+type: Opaque
+```
+
 When deploying the External Secrets operator using a [Helm Chart](https://github.com/external-secrets/kubernetes-external-secrets/tree/master/charts/kubernetes-external-secrets), you can leverage the custom image by setting the Chart's `values.yaml` to something like this:
 
 ```
