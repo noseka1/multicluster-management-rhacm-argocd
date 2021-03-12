@@ -8,7 +8,7 @@ Components used:
 
 ## Object management
 
-The Kubernetes objects can be divided into two groups.
+Kubernetes objects can be divided into two groups.
 
 1. Objects that are owned by the GitOps management. These objects are created and deleted by GitOps. Argo CD assumes by default that it owns all objects under its management. After the object has been deleted in the git repository, Argo CD will delete this object on the cluster during the next sync-up. In RHACM, we annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: replace` to achieve a similar behaviour.
 
