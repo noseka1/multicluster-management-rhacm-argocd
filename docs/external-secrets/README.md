@@ -26,8 +26,8 @@ kind: Secret
 metadata:
   name: custom-kubernetes-token
 data:
-  # Replace this token with a token that can authenticate against the remote Kubernetes cluster. You can get this token by running
-  # this command against the remote Kubernetes cluster, for example:
+  # Replace this token with a token that can authenticate against the remote Kubernetes cluster. You can get
+  # this token by running the following command against the remote Kubernetes cluster, for example:
   # oc sa get-token -n <your_namespace> <your_serviceaccount> | base64 -w 0
   token: ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNk ...
 type: Opaque
