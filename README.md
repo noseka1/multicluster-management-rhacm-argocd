@@ -22,6 +22,7 @@ argocd.argoproj.io/compare-options: IgnoreExtraneous
 ```
 
 * Draw a diagram showing the directory structure
+* Manifests for cluster provisioning
 
 ## References
 
