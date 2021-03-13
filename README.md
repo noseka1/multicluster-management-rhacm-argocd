@@ -3,7 +3,7 @@
 Deploy using:
 
 ```
-$ oc apply --kustomize bootstrap/
+$ oc apply --kustomize bootstrap
 ```
 
 ## Overview
