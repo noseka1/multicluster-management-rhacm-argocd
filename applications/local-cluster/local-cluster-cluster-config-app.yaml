@@ -7,7 +7,7 @@ spec:
     name: local-cluster
   project: local-cluster
   source:
-    path: aggregates/local-cluster
+    path: aggregates/local-cluster-cluster-config
     repoURL: https://github.com/noseka1/openshift-gitops-rhacm
     targetRevision: master
   syncPolicy:
