@@ -11,5 +11,6 @@ resources:
 - external-secrets-ns-appsub.yaml
 - external-secrets-ns-channel-ns.yaml
 - external-secrets-ns-channel.yaml
+- external-secrets-ns.yaml
 - external-secrets-placementrule.yaml
 - external-secrets-test-deployable.yaml
