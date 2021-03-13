@@ -1,0 +1,24 @@
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: mycluster-infra
+  namespace: mycluster
+spec:
+  clusterDeploymentRef:
+    name: mycluster
+  name: infra
+  platform:
+    aws:
+      rootVolume:
+        iops: 100
+        size: 100
+        type: gp2
+      type: m5.xlarge
+  autoscaling:
+    minReplicas: 3
+    maxReplicas: 10
+  labels:
+    node-role.kubernetes.io/infra:
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/infra

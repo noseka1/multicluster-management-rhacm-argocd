@@ -1,0 +1,17 @@
+apiVersion: hive.openshift.io/v1
+kind: MachinePool
+metadata:
+  name: mycluster-worker
+  namespace: mycluster
+spec:
+  clusterDeploymentRef:
+    name: mycluster
+  name: worker
+  platform:
+    aws:
+      rootVolume:
+        iops: 100
+        size: 100
+        type: gp2
+      type: m5.xlarge
+  replicas: 3

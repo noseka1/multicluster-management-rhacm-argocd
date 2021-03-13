@@ -1,0 +1,32 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: mycluster
+  namespace: mycluster
+  labels:
+    cloud: AWS
+    region: us-east-2
+    vendor: OpenShift
+spec:
+  # REPLACE
+  baseDomain: sandbox1085.opentlc.com
+  clusterName: mycluster
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 2
+  installed: false
+  platform:
+    aws:
+      credentialsSecretRef:
+        name: mycluster-aws-creds
+      region: us-east-2
+  provisioning:
+    installConfigSecretRef:
+      name: mycluster-install-config
+    sshPrivateKeySecretRef:
+      name: mycluster-ssh-private-key
+    imageSetRef:
+       #quay.io/openshift-release-dev/ocp-release:4.7.0-x86_64
+      name: img4.7.0-x86-64-appsub
+  pullSecretRef:
+    name: mycluster-pull-secret

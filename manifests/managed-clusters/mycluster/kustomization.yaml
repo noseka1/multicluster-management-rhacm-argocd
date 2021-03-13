@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- mycluster-infra-machinepool.yaml
+- mycluster-klusterletaddonconfig.yaml
+- mycluster-managedcluster.yaml
+- mycluster-worker-machinepool.yaml
+- secrets/mycluster-aws-creds-externalsecrets.yaml
+- secrets/mycluster-install-config-externalsecret.yaml
+- secrets/mycluster-pull-secret-externalsecret.yaml
+- secrets/mycluster-ssh-private-key-externalsecret.yaml
