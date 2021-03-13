@@ -1,4 +1,12 @@
-# Example of managing OCP clusters using RHACM and Argo CD
+# Managing OCP/Kubernetes clusters using RHACM and Argo CD
+
+Deploy using:
+
+```
+$ oc apply --kustomize bootstrap/
+```
+
+## Overview
 
 Components used:
 * [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (RHACM)
