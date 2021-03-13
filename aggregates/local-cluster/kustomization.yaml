@@ -6,5 +6,4 @@ bases:
 - ../../manifests/auth
 - ../../manifests/ingress
 - ../../manifests/monitoring
-- ../../manifests/registry/overlays/rwo
 - ../../manifests/users
