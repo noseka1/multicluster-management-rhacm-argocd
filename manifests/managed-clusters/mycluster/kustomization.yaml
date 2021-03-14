@@ -5,6 +5,7 @@ resources:
 - mycluster-clusterdeployment.yaml
 - mycluster-infra-machinepool.yaml
 - mycluster-klusterletaddonconfig.yaml
+- mycluster-managedclusterinfo.yaml
 - mycluster-managedcluster.yaml
 - mycluster-worker-machinepool.yaml
 - secrets/mycluster-aws-creds-externalsecrets.yaml
