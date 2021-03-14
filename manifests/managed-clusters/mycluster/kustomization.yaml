@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+- mycluster-clusterdeployment.yaml
 - mycluster-infra-machinepool.yaml
 - mycluster-klusterletaddonconfig.yaml
 - mycluster-managedcluster.yaml
