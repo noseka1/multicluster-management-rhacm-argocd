@@ -6,4 +6,4 @@ namespace: openshift-gitops
 resources:
 - local-cluster-appproj.yaml
 - local-cluster-cluster-config-app.yaml
-- local-cluster-managed-clusters--app.yaml
+- local-cluster-managed-clusters-app.yaml
