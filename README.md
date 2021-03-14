@@ -1,4 +1,4 @@
-# Managing OCP/Kubernetes clusters using RHACM and Argo CD
+# Managing OpenShift/Kubernetes clusters using RHACM and Argo CD
 
 Deploy using:
 
