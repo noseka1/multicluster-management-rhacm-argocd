@@ -42,6 +42,7 @@ TODO:
 * Manifests for cluster provisioning
 * Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git.
 * Non-Git channels cannot be created in the same namespace
+* Argo CD finds the managed resources by looking for the app.kubernetes.io/instance label
 
 ## References
 
