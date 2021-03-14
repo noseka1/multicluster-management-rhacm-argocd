@@ -18,7 +18,7 @@ spec:
     minReplicas: 3
     maxReplicas: 10
   labels:
-    node-role.kubernetes.io/infra:
+    node-role.kubernetes.io/infra: ""
   taints:
   - effect: NoSchedule
     key: node-role.kubernetes.io/infra
