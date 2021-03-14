@@ -1,0 +1,7 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: gitops-operator
+spec:
+  type: Git
+  pathname: https://github.com/noseka1/openshift-gitops-rhacm
