@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: local-cluster-managed-clusters
+  name: local-cluster-deploy-mycluster
 spec:
   destination:
     name: local-cluster
   project: local-cluster
   source:
-    path: aggregates/local-cluster-managed-clusters
+    path: aggregates/local-cluster-deploy-mycluster
     repoURL: https://github.com/noseka1/openshift-gitops-rhacm
     targetRevision: master
   syncPolicy:
