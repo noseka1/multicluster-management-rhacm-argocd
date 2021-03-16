@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   name: cluster-monitoring-config
   namespace: openshift-monitoring
 data:

@@ -3,7 +3,6 @@ kind: Config
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   name: cluster
 spec:
   # Create a route to allow accessing the image registry from outside of OpenShift.

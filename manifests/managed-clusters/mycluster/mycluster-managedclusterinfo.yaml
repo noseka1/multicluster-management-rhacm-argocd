@@ -2,10 +2,9 @@ apiVersion: internal.open-cluster-management.io/v1beta1
 kind: ManagedClusterInfo
 metadata:
   annotations:
-    # The purpose of this ManagedClusterInfo object is to attach these two
+    # The purpose of this ManagedClusterInfo object is to attach
     # Argo CD annocations to this object. These annotations tell Argo CD to
     # ignore this object instead of showing it as out of sync:
     argocd.argoproj.io/sync-options: Prune=false
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
   name: mycluster
   namespace: mycluster
