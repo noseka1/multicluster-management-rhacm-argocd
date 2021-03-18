@@ -51,7 +51,7 @@ spec:
       prune: false
 ```
 
-If the Argo CD's auto prune was enabled for an application named `example`, then Argo CD would delete all objects that belong to this application and do not exist in git anymore. How does Argo CD discover these objects when they are not represented in git? Argo CD looks at the `app.kubernetes.io/instance` label and matches its value against the application name. So, why can automated prune be a problem? Some cluster operators may create objects with this label set. If that happens, Argo CD will delete these objects as they don't exist in the git repository. An example of such object is ManagedClusterInfo created by RHACM.
+If the Argo CD's auto prune was enabled for an application named `example`, then Argo CD would delete all objects that belong to this application and do not exist in git anymore. How does Argo CD discover these objects when they are not represented in git? Argo CD looks at the `app.kubernetes.io/instance` label and matches its value against the application name. So, why can automated prune be a problem? Some cluster operators may create objects with this label set. If that happens, Argo CD will delete these objects as they don't exist in the git repository. An example of such object is ManagedClusterInfo created by RHACM. Also, deleting cluster objects feels safer when they need to be removed from git first and then pruned before they get really deleted. 
 
 ### Why is Argo CD's self-heal enabled in this repo?
 
