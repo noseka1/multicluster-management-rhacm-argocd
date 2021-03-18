@@ -55,7 +55,7 @@ If the Argo CD's auto prune was enabled for an application named `example`, then
 
 ### Why is Argo CD's self-heal enabled in this repo?
 
-If the renconcilitaion of objects on the cluster fails, we would like Argo CD to keep trying. This is what other operators typically do, they keep trying forever.
+If the reconcilitaion of objects on the cluster fails, we would like Argo CD to keep trying. This is what other operators typically do, they keep trying forever.
 
 TODO:
 * Add examples of object in the above categories
