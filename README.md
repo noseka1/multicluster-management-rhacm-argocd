@@ -36,6 +36,28 @@ Kubernetes objects can be divided into two categories:
 
 2. Objects that are modified by the GitOps management. These objects were created on the cluster by other means. GitOps is supposed to modify these objects but should never try to delete them. In Argo CD, we need to apply the following annotation to these objects: `argocd.argoproj.io/sync-options: Prune=false`. This prevents Argo CD from trying to delete these ojects (Prune=false) after they have been removed from the git repository. Note that Argo CD will still try to delete the object if you for example delete your application using `argocd app delete --cascade` or if you click Delete in the Web UI. In RHACM, annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: merge` to prevent RHACM from ever trying to delete the object.
 
+### Why is Argo CD's auto prune disabled in this repo?
+
+In this repo, the automated prune for Argo CD applications is disabled by setting `spec.syncPolicy.automated.prune: false` like this:
+
+```
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example
+spec:
+  syncPolicy:
+    automated:
+      prune: false
+```
+
+If the Argo CD's auto prune was enabled for an application named `example`, then Argo CD would delete all objects that belong to this application and do not exist in git anymore. How does Argo CD discover these objects when they are not represented in git? Argo CD looks at the `app.kubernetes.io/instance` label and matches its value against the application name. So, why can automated prune be a problem? Some cluster operators may create objects with this label set. If that happens, Argo CD will delete these objects as they don't exist in the git repository.
+
+### Why is Argo CD's self-heal enabled in this repo?
+
+
+
+
 TODO:
 * Add examples of object in the above categories
 * machinesets managed via machinepools
