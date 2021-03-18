@@ -38,7 +38,7 @@ Kubernetes objects can be divided into two categories:
 
 ### Why is Argo CD's auto prune disabled in this repo?
 
-In this repo, the automated prune for Argo CD applications is disabled by setting `spec.syncPolicy.automated.prune: false` like this:
+In this repo, the automated prune of Argo CD applications is disabled by setting `spec.syncPolicy.automated.prune: false` like this:
 
 ```
 apiVersion: argoproj.io/v1alpha1
