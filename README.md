@@ -64,6 +64,7 @@ TODO:
 * Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git, need to remove the label.
 * Non-Git channels cannot be created in the same namespace
 * Argo CD finds the managed resources by looking for the app.kubernetes.io/instance label
+* Add my kustomizations to the content list below.
 
 ## References
 
