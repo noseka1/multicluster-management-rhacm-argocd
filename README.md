@@ -30,19 +30,41 @@ The repository consists of several top-level directories:
 
 ## Object management
 
-Kubernetes objects can be divided into two groups.
+Kubernetes objects can be divided into two categories:
 
-1. Objects that are owned by the GitOps management. These objects are created and deleted by GitOps. Argo CD assumes by default that it owns all objects under its management. After the object has been deleted in the git repository, Argo CD will delete this object on the cluster during the next sync-up. In RHACM, we annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: replace` to achieve a similar behaviour.
+1. Objects that are owned by the GitOps management. These objects are created and deleted by GitOps. Argo CD assumes by default that it owns all objects under its management. After the object has been deleted in the git repository and the object is allowed to be pruned, Argo CD will delete this object on the cluster during the next sync-up. In RHACM, we annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: replace` to achieve a similar behaviour.
 
-2. Objects that are modified by the GitOps management. These objects were created on the cluster by other means. GitOps is supposed to modify these objects but should never try to delete them. In Argo CD, we need to apply the following annotation to these objects: `argocd.argoproj.io/sync-options: Prune=false`. This prevents Argo CD from ever trying to delete these ojects (Prune=false). In RHACM, annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: merge` to achieve similar behaviour.
+2. Objects that are modified by the GitOps management. These objects were created on the cluster by other means. GitOps is supposed to modify these objects but should never try to delete them. In Argo CD, we apply the following annotation to these objects: `argocd.argoproj.io/sync-options: Prune=false`. This prevents Argo CD from deleting these ojects (Prune=false) after they have been removed from the git repository even when the sync operation was executed with `prune=true`. Note that Argo CD will still try to delete the object if you for example delete your application using `argocd app delete --cascade` or if you click Delete in the Web UI. In RHACM, annotate the Subscription with `apps.open-cluster-management.io/reconcile-option: merge` to prevent RHACM from ever trying to delete the object.
+
+### Why is Argo CD's auto prune disabled in this repo?
+
+In this repo, the automated prune of Argo CD applications is disabled by setting `spec.syncPolicy.automated.prune: false` like this:
+
+```
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example
+spec:
+  syncPolicy:
+    automated:
+      prune: false
+```
+
+If the Argo CD's auto prune was enabled for an application named `example`, then Argo CD would delete all objects that belong to this application and do not exist in git anymore. How does Argo CD discover these objects when they are not represented in git? Argo CD looks at the `app.kubernetes.io/instance` label and matches its value against the application name. So, why can automated prune be a problem? Some cluster operators may create objects with this label set. If that happens, Argo CD will delete these objects as they don't exist in the git repository. An example of such object is ManagedClusterInfo created by RHACM. Also, deleting cluster objects feels safer when they need to be removed from git first and then pruned before they get deleted for real.
+
+### Why is Argo CD's self-heal enabled in this repo?
+
+If the reconcilitaion of objects on the cluster fails, we would like Argo CD to keep trying. This is what other operators typically do, they keep trying until the object is reconciled successfully.
 
 TODO:
+* Add examples of object in the above categories (owned vs modified)
 * machinesets managed via machinepools
 * Draw a diagram showing the directory structure
-* Manifests for cluster provisioning
-* Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git.
+* Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git, need to remove the label.
 * Non-Git channels cannot be created in the same namespace
 * Argo CD finds the managed resources by looking for the app.kubernetes.io/instance label
+* Add my kustomizations to the content list below.
 
 ## References
 
