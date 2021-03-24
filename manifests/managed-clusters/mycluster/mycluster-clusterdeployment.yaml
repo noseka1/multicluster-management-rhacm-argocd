@@ -9,7 +9,7 @@ metadata:
     vendor: OpenShift
 spec:
   # REPLACE
-  baseDomain: sandbox1085.opentlc.com
+  baseDomain: sandbox1752.opentlc.com
   clusterName: mycluster
   controlPlaneConfig:
     servingCertificates: {}
