@@ -8,4 +8,3 @@ resources:
 - argocd-apps-app.yaml
 - argocd-apps-channel.yaml
 - argocd-apps-placementrule.yaml
-- openshift-gitops-ns.yaml
