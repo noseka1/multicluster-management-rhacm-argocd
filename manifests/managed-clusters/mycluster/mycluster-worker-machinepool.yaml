@@ -14,4 +14,6 @@ spec:
         size: 100
         type: gp2
       type: m5.xlarge
-  replicas: 3
+  autoscaling:
+    minReplicas: 3
+    maxReplicas: 10
