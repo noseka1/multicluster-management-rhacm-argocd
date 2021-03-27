@@ -5,5 +5,5 @@ bases:
 - ../../manifests/apiserver
 - ../../manifests/auth
 - ../../manifests/ingress
-- ../../manifests/monitoring
+- ../../manifests/monitoring/overlays/infra-nodes
 - ../../manifests/users

@@ -4,7 +4,6 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: Prune=false
   name: cluster-monitoring-config
-  namespace: openshift-monitoring
 data:
   config.yaml: |+
     # Enable monitoring your own services
