@@ -63,3 +63,15 @@ data:
       tolerations:
       - effect: NoSchedule
         operator: Exists
+    openshiftStateMetrics:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - effect: NoSchedule
+        operator: Exists
+    thanosQuerier:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ""
+      tolerations:
+      - effect: NoSchedule
+        operator: Exists

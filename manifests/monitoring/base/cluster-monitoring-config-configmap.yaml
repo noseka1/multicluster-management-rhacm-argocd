@@ -44,3 +44,9 @@ data:
     telemeterClient:
       nodeSelector:
         node-role.kubernetes.io/worker: ""
+    openshiftStateMetrics:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
+    thanosQuerier:
+      nodeSelector:
+        node-role.kubernetes.io/worker: ""
