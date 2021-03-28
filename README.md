@@ -28,10 +28,6 @@ Edit the manifests and replace the values with your custom configuration.
 Second, apply the manifests to the Hub cluster:
 
 ```
-$ oc apply --kustomize .
-```
-
-```
 $ oc apply --kustomize bootstrap/external-secrets
 ```
 
