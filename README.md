@@ -15,7 +15,7 @@ Components used:
 
 ## Deploying
 
-The `boostrap` directory contains a set of Kubernetes manifests that will be deployed to the Hub cluster.
+The `boostrap` directory contains a set of Kubernetes manifests that need to be deployed to the Hub cluster.
 
 First, find the values in those manifests that have to be replaced:
 
