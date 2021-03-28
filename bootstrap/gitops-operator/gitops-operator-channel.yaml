@@ -4,4 +4,4 @@ metadata:
   name: gitops-operator
 spec:
   type: Git
-  pathname: https://github.com/noseka1/openshift-gitops-rhacm
+  pathname: https://github.com/noseka1/multicluster-management-rhacm-argocd

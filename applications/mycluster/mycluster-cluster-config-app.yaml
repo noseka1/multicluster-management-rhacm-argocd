@@ -8,7 +8,7 @@ spec:
   project: mycluster
   source:
     path: aggregates/mycluster-cluster-config
-    repoURL: https://github.com/noseka1/openshift-gitops-rhacm
+    repoURL: https://github.com/noseka1/multicluster-management-rhacm-argocd
     targetRevision: master
   syncPolicy:
     automated:
