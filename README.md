@@ -23,7 +23,7 @@ Components used:
 
 The repository consists of several top-level directories:
 
-* *bootstrap* directory contains manifests that should be deployed first. This deployment can be automated using Ansible. Bootstrap manifests deploy External Secrets on the managed clusters. They also deploy Argo CD on the Hub cluster plus all Argo CD application manifests.
+* *bootstrap* directory contains manifests that should be deployed first. This deployment can be automated using Ansible. Bootstrap manifests deploy Kubernetes External Secrets operator to the managed clusters. They also deploy Argo CD on the Hub cluster plus all Argo CD application manifests.
 * *applications* directory contains Argo CD application manifests. These manifests are deployed by RHACM after the manifests from the *boostrap* directory have been applied. The *applications* directory contains Argo CD application configuration for all managed clusters.
 * *aggregates* directory contains kustomizations that combine the kustomizations from the *manifests* directory. After applying a kustomization from the *aggregates* directory, an arbitrary number of kustomizations from the *manifests* directory are applied in one shot. Note that the *aggregates* directory is meant only for combining the kustomizations. There is no overlay configuration in this directory. Overlays are defined in the *manifests* directory. Aggregates are deployed by the Argo CD applications.
 * *manifests* directory contains individual configurations applied to the clusters. They are typically grouped into aggregates so that they can be applied at once. This directory also contains overlays which allow to specify configuration differences between individual clusters/environments.
