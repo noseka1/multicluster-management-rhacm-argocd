@@ -83,12 +83,8 @@ If the Argo CD's auto prune was enabled for an application named `example`, then
 * If the reconciliation of objects on the cluster fails, we would like Argo CD to keep trying. This is what other OpenShift operators typically do, they keep trying until the object is reconciled successfully.
 
 TODO:
-* Add examples of object in the above categories (owned vs modified)
-* machinesets managed via machinepools
-* Draw a diagram showing the directory structure
 * Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git, need to remove the label.
 * Non-Git channels cannot be created in the same namespace
-* Argo CD finds the managed resources by looking for the app.kubernetes.io/instance label
 * Add my kustomizations to the content list below.
 
 ## References
