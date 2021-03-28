@@ -9,13 +9,13 @@ $ oc apply --kustomize bootstrap
 ## Overview
 
 Components used:
+* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) (formerly known as GoDaddy External Secrets)
+  * Fetches the secret data from HashiCorp Vault or possibly other sources and using the secret data it creates Kubernetes Secrets on the cluster.
 * [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (RHACM)
   * Deploys new OpenShift clusters
   * Deploys External Secrets on the Hub cluster and managed clusters
   * Deploys Argo CD on the Hub cluster
   * Deploys AppProject and Application objects that instruct Argo CD how to configure clusters
-* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) (formerly known as GoDaddy External Secrets)
-  * Fetches the secret data from HashiCorp Vault or possibly other sources and using the secret data it creates Kubernetes Secrets on the cluster.
 * [Argo CD](https://argoproj.github.io/argo-cd/)
   * Manages clusters using the GitOps approach
 
