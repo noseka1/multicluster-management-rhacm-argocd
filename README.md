@@ -1,9 +1,37 @@
 # Managing multiple OpenShift/Kubernetes clusters using RHACM and Argo CD
 
-Deploy using:
+## Deploying
+
+The `boostrap` directory contains a set of Kubernetes manifests that will be deployed to the Hub cluster.
+
+First, find the values in those manifests that have to be replaced:
 
 ```
-$ oc apply --kustomize bootstrap
+$ grep -rn REPLACE *
+```
+
+Edit the manifests and replace the values with your custom configuration.
+
+Second, apply the manifests to the Hub cluster:
+
+```
+$ oc apply --kustomize .
+```
+
+```
+$ oc apply --kustomize bootstrap/external-secrets
+```
+
+```
+$ oc apply --kustomize bootstrap/gitops-namespace
+```
+
+```
+$ oc apply --kustomize bootstrap/gitops-operator
+```
+
+```
+$ oc apply --kustomize bootstrap/argocd-apps
 ```
 
 ## Overview
