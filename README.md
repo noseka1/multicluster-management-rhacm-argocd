@@ -1,5 +1,18 @@
 # Managing multiple OpenShift/Kubernetes clusters using RHACM and Argo CD
 
+## Overview
+
+Components used:
+* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) (formerly known as GoDaddy External Secrets)
+  * Fetches the secret data from HashiCorp Vault or possibly other sources and using this secret data it creates Kubernetes Secrets on the cluster.
+* [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (RHACM)
+  * Deploys new OpenShift clusters
+  * Deploys External Secrets on the Hub cluster and managed clusters
+  * Deploys Argo CD on the Hub cluster
+  * Deploys AppProject and Application objects that instruct Argo CD how to configure clusters
+* [Argo CD](https://argoproj.github.io/argo-cd/)
+  * Manages clusters using the GitOps approach
+
 ## Deploying
 
 The `boostrap` directory contains a set of Kubernetes manifests that will be deployed to the Hub cluster.
@@ -33,19 +46,6 @@ $ oc apply --kustomize bootstrap/gitops-operator
 ```
 $ oc apply --kustomize bootstrap/argocd-apps
 ```
-
-## Overview
-
-Components used:
-* [Kubernetes External Secrets](https://github.com/external-secrets/kubernetes-external-secrets) (formerly known as GoDaddy External Secrets)
-  * Fetches the secret data from HashiCorp Vault or possibly other sources and using this secret data it creates Kubernetes Secrets on the cluster.
-* [Red Hat Advanced Cluster Management](https://www.redhat.com/en/technologies/management/advanced-cluster-management) (RHACM)
-  * Deploys new OpenShift clusters
-  * Deploys External Secrets on the Hub cluster and managed clusters
-  * Deploys Argo CD on the Hub cluster
-  * Deploys AppProject and Application objects that instruct Argo CD how to configure clusters
-* [Argo CD](https://argoproj.github.io/argo-cd/)
-  * Manages clusters using the GitOps approach
 
 ## Directory structure
 
