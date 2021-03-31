@@ -25,8 +25,8 @@ spec:
     sshPrivateKeySecretRef:
       name: mycluster-ssh-private-key
     imageSetRef:
-       #quay.io/openshift-release-dev/ocp-release:4.7.0-x86_64
-      name: img4.7.0-x86-64-appsub
+       #quay.io/openshift-release-dev/ocp-release:4.7.4-x86_64
+      name: img4.7.4-x86-64-appsub
     # openshift-install may need to download RHCOS images from the public Web.
     # If the Hub cluster needs to use a corporate proxy to access public Web
     # then define it here:
