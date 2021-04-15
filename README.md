@@ -90,7 +90,7 @@ If the Argo CD's auto prune was enabled for an application named `example`, then
 
 ## References
 
-To create this repo, I draw ideas and inspiration from:
+To create this repo, I drew ideas and inspiration from:
 
 * https://github.com/PixelJonas/cluster-gitops
 * https://github.com/gnunn-gitops/cluster-config
