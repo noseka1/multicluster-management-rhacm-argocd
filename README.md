@@ -105,3 +105,4 @@ To create this repo, I drew ideas and inspiration from:
 Content that can be installed on the cluster via Argo CD:
 
 * https://github.com/redhat-canada-gitops/catalog
+* https://github.com/AlyIbrahim/openshift-add-ons
