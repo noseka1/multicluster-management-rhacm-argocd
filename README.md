@@ -110,3 +110,4 @@ Content that can be installed on the cluster via Argo CD:
 
 * https://github.com/redhat-canada-gitops/catalog
 * https://github.com/AlyIbrahim/openshift-add-ons
+* https://github.com/hornjason/argocd-lab
