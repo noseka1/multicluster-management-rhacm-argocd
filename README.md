@@ -82,6 +82,10 @@ If the Argo CD's auto prune was enabled for an application named `example`, then
 * If the cluster's state has been changed (for example manually by the user) and it now differs from the state in git, Argo CD should restore the cluster state to match the configuration in git.
 * If the reconciliation of objects on the cluster fails, we would like Argo CD to keep trying. This is what other OpenShift operators typically do, they keep trying until the object is reconciled successfully.
 
+## Video
+
+[![How to Manage Multiple Clusters Using RHACM and Argo CD](https://img.youtube.com/vi/b7Q3KvgA48Q/0.jpg)](http://www.youtube.com/watch?v=b7Q3KvgA48Q)
+
 ## TODO
 
 * Shortcomings: Cannot make Argo CD forget a resource (Prune=false) that was removed from git, need to remove the label.
