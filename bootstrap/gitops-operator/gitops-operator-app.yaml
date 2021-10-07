@@ -2,3 +2,4 @@ apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
   name: gitops-operator
+spec: {}
