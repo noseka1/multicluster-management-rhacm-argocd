@@ -8,7 +8,7 @@ resources:
 - mycluster-managedclusterinfo.yaml
 - mycluster-managedcluster.yaml
 - mycluster-worker-machinepool.yaml
-- secrets/mycluster-aws-creds-externalsecrets.yaml
+- secrets/mycluster-aws-creds-externalsecret.yaml
 - secrets/mycluster-install-config-externalsecret.yaml
 - secrets/mycluster-pull-secret-externalsecret.yaml
 - secrets/mycluster-ssh-private-key-externalsecret.yaml
